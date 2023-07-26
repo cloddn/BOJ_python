@@ -2,7 +2,6 @@ import sys
 
 n=int(sys.stdin.readline())
 _arr=[0]*10001 #10000보다 작은수로 주어짐
-s_arr=[0] * n
 for i in range(n):
     num=int(sys.stdin.readline())
     _arr[num]+=1
