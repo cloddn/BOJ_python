@@ -1,31 +1,16 @@
 import sys
 
-#수의 범위가 작다면, 카운팅 정렬시 빠르게 정렬할 수 있음
-def counting_sort(list,s_list):
-    cnt=[0] * (max(list)+1) #최댓값 +1 초기화
-    
-    #각 항목의 개수 저장
-    for i in list:
-        cnt[i]+=1
-    
-    #오름차순  # 카운팅 배열 누적합만들기
-    for idx in range(1,len(cnt)):
-        cnt[idx]+=cnt[idx-1]
-    #내림차순 
-    #for idx in range(len(cnt)-2, -1,-1):
-    #    cnt[idx]+=cnt[idx+1]
-
-    #적절한 곳에 배치 
-    for j in range(len(list)-1,-1,-1):
-        s_list[cnt[list[j]]-1]=list[j]
-        cnt[list[j]]-=1 #
-
 n=int(sys.stdin.readline())
-_arr=[]
+_arr=[0]*10001 #10000보다 작은수로 주어짐
 s_arr=[0] * n
 for i in range(n):
-    _arr.append(int(sys.stdin.readline()))
+    num=int(sys.stdin.readline())
+    _arr[num]+=1
 
-counting_sort(_arr,s_arr)
-for i in s_arr:
-    print(s_arr[i])
+
+for i in range(len(_arr)):
+    #_arr에 숫자가 들어왔다면
+    if _arr[i]!=0:
+        #arm[num]에 있는 개수 만큼 출력
+        for j in range(_arr[i]):
+            print(i)
