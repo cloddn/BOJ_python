@@ -12,10 +12,8 @@ for i in range(n):
 
     if len(leftHeap)==len(rightHeap):
         heapq.heappush(leftHeap,-num)
-        print(leftHeap)
     else:
         heapq.heappush(rightHeap, num)
-        print(rightHeap)
      
     if rightHeap and rightHeap[0] < -leftHeap[0]:
         leftValue = heapq.heappop(leftHeap)
