@@ -1,6 +1,7 @@
 import sys
 input=sys.stdin.readline
 k=int(input())
+
 stackList=[]
 for i in range(k):
     s=input().split()
